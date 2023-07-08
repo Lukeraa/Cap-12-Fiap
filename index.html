@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Fintech</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <style>
+    /* Estilos personalizados */
+  </style>
+</head>
+<body>
+  <div class="flex justify-center items-center h-screen" style="background-color: #121214;">
+    <div class="items-center">
+      <img src="img/logo2.png" alt="logo do projeto" class="w-full">
+      <!-- <button onclick="authenticate()" id="google-signin-button" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Login com Google</button> -->
+      <button id="google-signin-button" class="w-full text-white my-8 py-2 px-4 rounded hover:bg-red-700" style="background-color: #DB4437; font-family: 'Roboto', sans-serif;">
+        <i class="fa-brands fa-google mr-2"></i>
+        ENTRAR COM GOOGLE
+      </button>
+
+      <p class="text-white text-center">Não utilizamos nenhuma informação além<br/> do seu e-mail para criação de sua conta.</p>
+
+    </div>
+  </div>
+
+  <!-- EM PRODUÇÃO <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+
+    function authenticate() {
+      // informações do provedor OAuth2
+      var clientId = '***';
+      var redirectUri = 'http://127.0.0.1:8000/oauth/callback';
+
+      // Redirecionar para a página de autenticação do provedor OAuth2
+      var authUrl = 'https://accounts.google.com/o/oauth2/auth' +
+          '?client_id=' + encodeURIComponent(clientId) +
+          '&redirect_uri=' + encodeURIComponent(redirectUri) +
+          '&response_type=code';
+      window.location.href = authUrl;
+    }
+
+    var authorizationCode = new URLSearchParams(window.location.search).get('code');
+    if (authorizationCode) {
+      // Realizar solicitação AJAX para trocar o código de autorização por um access token
+      var clientId = '***';
+      var clientSecret = '***';
+      var redirectUri = 'http://127.0.0.1:8000/oauth/callback';
+
+      var tokenUrl = 'https://oauth2.googleapis.com/token';
+      var data = {
+          grant_type: 'authorization_code',
+          client_id: clientId,
+          client_secret: clientSecret,
+          redirect_uri: redirectUri,
+          code: authorizationCode
+      };
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', tokenUrl, true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+              var response = JSON.parse(xhr.responseText);
+              var accessToken = response.access_token;
+              console.log('Access Token:', accessToken);
+          }
+      };
+      xhr.send(encodeFormData(data));
+    }
+
+    function encodeFormData(data) {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        .join('&');
+    }
+
+    // Função de callback do Google Sign-In
+    function onGoogleSignIn(googleUser) {
+      // Obter as informações do usuário
+      var profile = googleUser.getBasicProfile();
+      var idToken = googleUser.getAuthResponse().id_token;
+
+      // Enviar as informações para o servidor para autenticação e criação de sessão
+
+      // Utilizar as informações do usuário
+      console.log('Nome: ' + profile.getName());
+      console.log('Email: ' + profile.getEmail());
+      console.log('ID Token: ' + idToken);
+    }
+
+    // Renderizar o botão de login do Google
+    function renderGoogleSignInButton() {
+      gapi.load('auth2', function() {
+        gapi.auth2.init({
+          client_id: '***',
+        }).then(function() {
+          gapi.signin2.render('google-signin-button', {
+            scope: 'profile email',
+            width: 240,
+            height: 40,
+            longtitle: true,
+            theme: 'dark',
+            onsuccess: onGoogleSignIn
+          });
+        });
+      });
+    }
+  </script> -->
+</body>
+</html>

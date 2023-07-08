@@ -1,0 +1,10 @@
+/* Estilos personalizados que "fogem" dos padrões do Tailwind */
+/* Adicionar personalizações adicionais, se necessário */
+
+* {
+    padding:0;
+    margin:0;
+    vertical-align:baseline;
+    list-style:none;
+    border:0
+}
